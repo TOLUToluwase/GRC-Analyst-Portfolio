@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV & Cover Letter | Abosede Oyinloye</title>
+    <meta name="description" content="CV and Cover Letter for Abosede Oyinloye — GRC Analyst & ISO/IEC 27001 Lead Auditor">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .cv-document {
+            max-width: 850px;
+            margin: 0 auto;
+            text-align: left;
+            padding: 48px;
+            background: rgba(11, 15, 19, 0.6);
+        }
+
+        .cv-section-title {
+            color: var(--accent-color);
+            margin-bottom: 24px;
+            margin-top: 40px;
+            font-size: 1.25rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 1px solid var(--border-glass);
+            padding-bottom: 8px;
+            font-family: var(--font-body);
+        }
+
+        .cv-document h3.cv-section-title:first-of-type {
+            margin-top: 0;
+        }
+
+        .cv-text {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        .cv-header {
+            text-align: center;
+            margin-bottom: 48px;
+            border-bottom: 1px solid var(--border-glass);
+            padding-bottom: 24px;
+        }
+
+        .cv-header h2 {
+            margin-bottom: 12px;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .cv-header p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+        
+        .cv-header a {
+            color: var(--accent-color);
+        }
+
+        .cv-list {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 32px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .cv-list li {
+            position: relative;
+            padding-left: 20px;
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        .cv-list li::before {
+            content: '•';
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+        }
+
+        .job-entry {
+            margin-bottom: 32px;
+        }
+
+        .job-entry h4 {
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            margin-bottom: 4px;
+            font-family: var(--font-body);
+        }
+
+        .job-meta {
+            color: var(--accent-color);
+            font-size: 0.95rem;
+            margin-bottom: 16px;
+            font-weight: 500;
+        }
+
+        .entry-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .entry-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .entry-list li::before {
+            content: '▹';
+            color: var(--text-muted);
+            position: absolute;
+            left: 0;
+        }
+
+        @media (max-width: 768px) {
+            .cv-list {
+                grid-template-columns: 1fr;
+            }
+            .cv-document {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Floating Navigation -->
+    <div class="navbar-wrapper">
+        <nav class="navbar">
+            <button class="hamburger-btn" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <div class="nav-links">
+                <a href="index.html#home">Home</a>
+                <a href="index.html#journey">Background</a>
+                <a href="projects.html">Independent Projects</a>
+                <a href="certifications.html">Certifications</a>
+                <a href="index.html#contact" class="btn-primary">Let's talk</a>
+            </div>
+        </nav>
+    </div>
+    
+    <!-- Mobile Bottom App Nav (Phone Interface Only) -->
+    <nav class="mobile-bottom-nav">
+        <a href="index.html#home" class="bottom-nav-item">
+            <span class="nav-icon">🏠</span>
+            <span class="nav-text">Home</span>
+        </a>
+        <a href="projects.html" class="bottom-nav-item">
+            <span class="nav-icon">🛡️</span>
+            <span class="nav-text">Projects</span>
+        </a>
+        <a href="certifications.html" class="bottom-nav-item">
+            <span class="nav-icon">🏅</span>
+            <span class="nav-text">Certs</span>
+        </a>
+        <a href="cv.html" class="bottom-nav-item active">
+            <span class="nav-icon">📄</span>
+            <span class="nav-text">CV</span>
+        </a>
+        <a href="https://linkedin.com/in/toluwaseoyinloye" target="_blank" rel="noopener" class="bottom-nav-item">
+            <span class="nav-icon">💼</span>
+            <span class="nav-text">LinkedIn</span>
+        </a>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Page Header -->
+        <section class="container" style="padding-top: 150px; padding-bottom: 50px; text-align: center;">
+            <h1 class="hero-title fade-up">Curriculum Vitae</h1>
+            <p class="hero-subtitle fade-up" style="max-width: 700px;">
+                Review my professional background, core competencies, and career trajectory below.
+            </p>
+        </section>
+
+        <!-- CV Viewer Layout -->
+        <section class="container" style="padding-top: 0;">
+            <!-- CV Document Section -->
+            <div class="card cv-document fade-up" style="margin-bottom: 48px;">
+                
+                <div class="cv-header">
+                    <h2>ABOSEDE OYINLOYE</h2>
+                    <p style="margin-bottom: 24px;">
+                        Ellesmere Port, UK &nbsp;|&nbsp;
+                        <a href="tel:+447453650987" title="Click to copy" style="color: inherit; text-decoration: none; cursor: copy;">+44 7453 650987</a>
+                        &nbsp;|&nbsp; toluwaseabo345@gmail.com &nbsp;|&nbsp;
+                        <a href="https://www.linkedin.com/in/abosede-oyinloye/" target="_blank" style="color: var(--accent-color);">linkedin.com/in/abosede-oyinloye</a>
+                    </p>
+                    <a href="assets/Abosede_Oyinloye_CV.pdf" class="btn-secondary" download>⬇ Download CV as PDF</a>
+                </div>
+
+                <!-- Professional Summary -->
+                <h3 class="cv-section-title">PROFESSIONAL SUMMARY</h3>
+                <div class="cv-text">
+                    <p>Detail-oriented and motivated aspiring GRC Analyst with hands-on experience supporting governance, risk, and compliance activities, including audit tracking, policy documentation, and risk identification. Strong understanding of third-party/vendor risk concepts, regulatory compliance, and internal controls. Proven ability to communicate effectively, manage documentation, and collaborate with cross-functional teams. Certified in ISO/IEC 27001:2022 Lead Auditor with practical exposure to compliance and audit processes. Currently building further knowledge in cybersecurity and risk frameworks, seeking an entry-level GRC, Vendor Risk, or Compliance Analyst role in the UK.</p>
+                </div>
+
+                <!-- Core Skills -->
+                <h3 class="cv-section-title">CORE SKILLS</h3>
+                <ul class="cv-list">
+                    <li>Third-Party / Vendor Risk Awareness</li>
+                    <li>Risk Assessment Support</li>
+                    <li>Policy & Procedure Documentation</li>
+                    <li>Audit Support & Tracking</li>
+                    <li>Regulatory & Compliance Awareness (UK GDPR, internal controls)</li>
+                    <li>Stakeholder Communication</li>
+                    <li>Analytical Thinking & Problem Solving</li>
+                    <li>Record Keeping & Documentation Accuracy</li>
+                    <li>Time Management & Prioritisation</li>
+                </ul>
+
+                <!-- Professional Experience -->
+                <h3 class="cv-section-title">PROFESSIONAL EXPERIENCE</h3>
+                
+                <div class="job-entry">
+                    <h4>GRC Intern</h4>
+                    <div class="job-meta">Greengrin, Nigeria | May 2020 – June 2021</div>
+                    <ul class="entry-list">
+                        <li>Supported governance, risk, and compliance activities across business units</li>
+                        <li>Assisted in identifying control gaps and contributed to risk mitigation recommendations</li>
+                        <li>Collaborated with IT, legal, and business stakeholders to support compliance efforts</li>
+                        <li>Contributed to the development and maintenance of policies, procedures, and control documentation</li>
+                        <li>Tracked audit findings and supported remediation follow-ups</li>
+                        <li>Assisted with compliance reviews and internal audit preparation activities</li>
+                        <li>Developed foundational knowledge of risk management processes and governance structures</li>
+                    </ul>
+                </div>
+
+                <div class="job-entry">
+                    <h4>Healthcare Assistant</h4>
+                    <div class="job-meta">Exemplar Health Care, Ellesmere Port | Aug 2023 – July 2025</div>
+                    <ul class="entry-list">
+                        <li>Maintained accurate and detailed records, ensuring compliance with healthcare regulations and internal policies</li>
+                        <li>Monitored and reported changes in patient condition, demonstrating strong attention to risk and escalation processes</li>
+                        <li>Supported structured care plans, aligning with regulatory and quality standards</li>
+                        <li>Communicated effectively with multidisciplinary teams, ensuring coordinated and compliant care delivery</li>
+                    </ul>
+                </div>
+
+                <div class="job-entry">
+                    <h4>Customer Service Administrator</h4>
+                    <div class="job-meta">Utopia, Nigeria | July 2021 – March 2023</div>
+                    <ul class="entry-list">
+                        <li>Managed high-volume customer queries while maintaining accurate records and documentation</li>
+                        <li>Resolved issues efficiently, applying structured problem-solving approaches</li>
+                        <li>Maintained data accuracy in internal systems, supporting reporting and operational reliability</li>
+                        <li>Built strong relationships with customers through clear and professional communication</li>
+                    </ul>
+                </div>
+
+                <div class="job-entry">
+                    <h4>Career Break (Maternity Leave)</h4>
+                    <div class="job-meta">July 2025 – Present</div>
+                    <ul class="entry-list">
+                        <li>Maintained professional development with a focus on compliance, data protection, and corporate practices</li>
+                        <li>Strengthened communication, organisation, and analytical skills in preparation for returning to work</li>
+                    </ul>
+                </div>
+
+                <!-- Education -->
+                <h3 class="cv-section-title">EDUCATION</h3>
+                <div class="job-entry">
+                    <h4>Bachelor of Arts in Education</h4>
+                    <div class="job-meta">University of Ilorin, Nigeria | 2019</div>
+                </div>
+
+                <!-- Certifications & Training -->
+                <h3 class="cv-section-title">CERTIFICATIONS & TRAINING</h3>
+                <div class="job-entry">
+                    <ul class="entry-list">
+                        <li><strong>ISO/IEC 27001:2022 Certificate of Competency</strong> – Mastermind Assurance (Issued Feb 2026, Expires Feb 2029)</li>
+                        <li><strong>CompTIA Security+</strong> (In Progress)</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Contact/Footer -->
+    <footer id="contact" class="container footer-section">
+        <div class="footer-card card fade-up">
+            <h2>Connect With Me</h2>
+            <p>Open to enterprise GRC roles and strategic security partnerships. Reach out directly — I would be glad to connect.</p>
+            <div class="contact-info">
+                <p><strong>Phone:</strong> <a href="tel:+447453650987" style="color: var(--text-primary); text-decoration: none;">+44 7453 650987</a></p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html#home" class="btn-primary">🏠 Back to Homepage</a>
+                <a href="mailto:toluwaseabo345@gmail.com" class="btn-secondary">📩 Email Me Directly</a>
+                <a href="https://www.linkedin.com/in/abosede-oyinloye/" target="_blank" rel="noopener" class="btn-secondary">💼 Connect on LinkedIn</a>
+            </div>
+        </div>
+        <div class="footer-bottom fade-up">
+            <p>&copy; 2026 Abosede Oyinloye. All rights reserved.</p>
+            <a href="#">Back to top ↑</a>
+        </div>
+    </footer>
+
+    <script src="main.js?v=2"></script>
+</body>
+</html>

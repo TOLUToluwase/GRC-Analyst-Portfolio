@@ -1,34 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Smooth scrolling for navigation
-    document.querySelectorAll('.nav-links a[href^="#"]').forEach(anchor => {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            // Close mobile menu if open
-            document.querySelector('.nav-links').classList.remove('mobile-active');
-            document.querySelector('.hamburger-btn').classList.remove('active');
-            
-            const targetId = this.getAttribute('href');
-            if (targetId !== '#') {
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-            }
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
         });
     });
-
-    // Hamburger menu toggle logic
-    const hamburger = document.querySelector('.hamburger-btn');
-    const navLinks = document.querySelector('.nav-links');
-    
-    if (hamburger && navLinks) {
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('mobile-active');
-        });
-    }
 
     // Intersection Observer for fade-up animations
     const observerOptions = {
@@ -75,30 +54,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-
-
-    // Click-to-copy phone number
-    const phoneLinks = document.querySelectorAll('a[href="tel:+447453650987"]');
-    phoneLinks.forEach(link => {
-        link.addEventListener('click', function (e) {
+    // Handle mock PDF download
+    const downloadBtn = document.querySelector('.btn-secondary');
+    if (downloadBtn) {
+        downloadBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            navigator.clipboard.writeText('+44 7453 650987').then(() => {
-                // Show toast
-                const toast = document.createElement('div');
-                toast.textContent = '📋 Phone number copied!';
-                toast.style.cssText = `
-                    position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%);
-                    background: #00ffaa; color: #0b0f13; padding: 12px 24px;
-                    border-radius: 999px; font-weight: 600; font-size: 0.9rem;
-                    z-index: 9999; box-shadow: 0 4px 20px rgba(0,255,170,0.3);
-                    transition: opacity 0.5s ease;
-                `;
-                document.body.appendChild(toast);
-                setTimeout(() => { toast.style.opacity = '0'; }, 1800);
-                setTimeout(() => { toast.remove(); }, 2300);
-            });
+            alert("This will download the highly curated 'Executive Summary' PDF outlining Abosede's high-level wins and certifications.");
         });
-    });
+    }
 
     // Apply fade-up class to elements dynamically and observe them
     const elementsToAnimate = document.querySelectorAll(

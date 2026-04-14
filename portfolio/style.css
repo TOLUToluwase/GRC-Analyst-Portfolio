@@ -44,7 +44,8 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 h1,
@@ -182,6 +183,37 @@ section {
   color: var(--text-primary);
 }
 
+/* Hamburger Menu Button */
+.hamburger-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 6px;
+  padding: 4px;
+}
+
+.hamburger-btn .bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.hamburger-btn.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger-btn.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-btn.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
 /* --- Hero Section --- */
 .hero {
   min-height: 100vh;
@@ -196,10 +228,10 @@ section {
 .avatar-wrapper {
   margin-bottom: 32px;
   position: relative;
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
   border-radius: var(--radius-full);
-  padding: 3px;
+  padding: 4px;
   background: linear-gradient(135deg, var(--accent-color), transparent 60%);
   box-shadow: 0 0 40px var(--accent-glow);
 }
@@ -209,27 +241,12 @@ section {
   height: 100%;
   border-radius: var(--radius-full);
   object-fit: cover;
-  object-position: top;
+  object-position: center 15%;
   background-color: var(--bg-card);
   display: block;
-}
-
-.avatar-wrapper {
-  margin-bottom: 32px;
-  position: relative;
-  width: 120px;
-  height: 120px;
-  border-radius: var(--radius-full);
-  padding: 4px;
-  background: linear-gradient(135deg, var(--accent-glow), transparent);
-}
-
-.avatar {
-  width: 100%;
-  height: 100%;
-  border-radius: var(--radius-full);
-  object-fit: cover;
-  background-color: var(--bg-card);
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  transform: translateZ(0); /* Force hardware acceleration for sharpness */
 }
 
 .status-badge {
@@ -638,19 +655,47 @@ section {
   .navbar {
     padding: 8px 16px;
     gap: 16px;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .hamburger-btn {
+    display: flex;
   }
 
   .nav-links {
-    gap: 16px;
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 16px;
+    right: 16px;
+    background: rgba(11, 15, 19, 0.95);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--border-glass);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    gap: 24px;
+  }
+
+  .nav-links.mobile-active {
+    display: flex;
   }
 
   .nav-links a:not(.btn-primary) {
-    display: none;
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 1.1rem;
+    padding: 8px 0;
   }
 
   .nav-links a.btn-primary {
-    font-size: 0.85rem;
-    padding: 8px 16px;
+    font-size: 1rem;
+    padding: 12px 16px;
+    width: 100%;
+    text-align: center;
   }
 
   .bento-grid {
@@ -679,5 +724,63 @@ section {
     flex-direction: column;
     align-items: center;
     gap: 16px;
+  }
+}
+
+/* --- Mobile Bottom Nav (Phone Interface Only) --- */
+.mobile-bottom-nav {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-bottom-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(11, 15, 19, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid var(--border-glass);
+    z-index: 200;
+    padding: 12px 24px;
+    padding-bottom: calc(12px + env(safe-area-inset-bottom, 12px));
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.5);
+  }
+
+  .bottom-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    color: var(--text-secondary);
+    transition: all 0.2s ease;
+  }
+
+  .bottom-nav-item:hover, .bottom-nav-item.active {
+    color: var(--accent-color);
+    transform: translateY(-2px);
+  }
+
+  .bottom-nav-item .nav-icon {
+    font-size: 1.4rem;
+  }
+
+  .bottom-nav-item .nav-text {
+    font-size: 0.7rem;
+    font-weight: 500;
+  }
+  
+  /* Hide the top navbar entirely to commit to phone interface */
+  .navbar-wrapper {
+    display: none !important;
+  }
+  
+  /* Add padding to footer so it doesn't hide behind bottom nav */
+  body {
+    padding-bottom: 80px; 
   }
 }
